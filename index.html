@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS // TERMINAL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00ff41">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h2>SYSTEM:POSITION_CALC</h2>
+        <div class="status-bar">STATUS: <span id="online-status">ONLINE</span></div>
+    </div>
+    
+    <div class="input-group">
+        <label>RISK_AMOUNT (USD)</label>
+        <input type="number" id="risk" placeholder="0.00" oninput="calculate()">
+    </div>
+
+    <div class="input-group">
+        <label>STOP_LOSS (%)</label>
+        <input type="number" id="sl" placeholder="0.00" oninput="calculate()">
+    </div>
+
+    <div class="input-group">
+        <label>ENTRY_PRICE (USD)</label>
+        <input type="number" id="entry" placeholder="0.00" oninput="calculate()">
+    </div>
+
+    <div class="result-panel">
+        <div class="result-item">
+            <span>POSITION_SIZE:</span>
+            <span class="val" id="res-usd">$0.00</span>
+        </div>
+        <div class="result-item">
+            <span>ASSET_QTY:</span>
+            <span class="val" id="res-qty">0.0000</span>
+        </div>
+    </div>
+
+    <button id="installBtn" class="btn-install">INSTALL_TO_SYSTEM</button>
+    <div class="footer-note">ENCRYPTED // OFFLINE_ENABLED</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

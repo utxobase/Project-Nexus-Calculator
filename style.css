@@ -1,0 +1,111 @@
+:root {
+    --neon-green: #00ff41;
+    --dark-bg: #050505;
+    --panel-bg: #0f0f0f;
+    --text-gray: #666;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--neon-green);
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: var(--panel-bg);
+    padding: 2rem;
+    border: 1px solid var(--neon-green);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.1);
+    width: 90%;
+    max-width: 380px;
+}
+
+.header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #222;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.status-bar {
+    font-size: 0.6rem;
+    color: var(--text-gray);
+    margin-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    background: #000;
+    border: 1px solid #222;
+    padding: 12px;
+    color: #fff;
+    font-size: 1.1rem;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: var(--neon-green);
+}
+
+.result-panel {
+    background: #000;
+    padding: 15px;
+    margin-top: 20px;
+    border-left: 4px solid var(--neon-green);
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.val {
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-install {
+    width: 100%;
+    background: transparent;
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: none;
+    font-family: inherit;
+}
+
+.btn-install:hover {
+    background: var(--neon-green);
+    color: #000;
+}
+
+.footer-note {
+    font-size: 0.5rem;
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
+}
