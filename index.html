@@ -7,12 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#ff5500">
-
-    <!-- Inline SVG favicon (Bitcoin symbol) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23050505'/><text y='.9em' font-size='85' x='5'>₿</text></svg>">
-
-    <!-- Apple touch icon fallback (use generated PNG if available) -->
-    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="icon" type="image/svg+xml" href="icon-192.svg">
+    <link rel="apple-touch-icon" href="icon-192.svg">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="NEXUS">
@@ -21,13 +17,11 @@
 
 <div class="container">
     <div class="header">
-        <!-- Bitcoin SVG logo -->
-        <div class="btc-logo" aria-label="Bitcoin">
+        <div class="btc-logo">
             <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
-                <rect width="64" height="64" rx="12" fill="#ff5500" opacity="0.12"/>
+                <rect width="64" height="64" rx="10" fill="#ff5500" opacity="0.15"/>
                 <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle"
-                      font-size="42" fill="#ff5500" font-family="Courier New, monospace"
-                      font-weight="bold">₿</text>
+                      font-size="42" fill="#ff5500" font-family="serif" font-weight="bold">₿</text>
             </svg>
         </div>
         <div class="header-text">
@@ -62,7 +56,6 @@
         </div>
     </div>
 
-    <!-- Dedicated install button, always visible -->
     <button id="installBtn" class="btn-install">⬇ INSTALL_TO_SYSTEM</button>
     <div id="install-msg" class="install-msg"></div>
 

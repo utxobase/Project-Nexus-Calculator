@@ -18,9 +18,9 @@ function calculate() {
 // ── Service Worker ────────────────────────────────────────────────────
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-            .then(() => console.log('Nexus SW Active'))
-            .catch(err => console.log('SW Error', err));
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('✅ Nexus SW Active:', reg.scope))
+            .catch(err => console.error('❌ SW Error:', err));
     });
 }
 
@@ -49,17 +49,22 @@ function setInstallState(state) {
     }
 }
 
-// Default state on load
 setInstallState('waiting');
 
-// Browser signals it can be installed
+// If already running as installed PWA
+if (window.matchMedia('(display-mode: standalone)').matches) {
+    setInstallState('installed');
+}
+
+// Browser fires this when PWA is installable
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     deferredPrompt = e;
+    console.log('✅ beforeinstallprompt fired');
     setInstallState('ready');
 });
 
-// User clicks install
+// User clicks install button
 installBtn.addEventListener('click', () => {
     if (deferredPrompt) {
         deferredPrompt.prompt();
@@ -67,24 +72,19 @@ installBtn.addEventListener('click', () => {
             if (choice.outcome === 'accepted') {
                 setInstallState('installed');
             } else {
-                setInstallState('ready'); // keep available if dismissed
+                setInstallState('ready');
             }
             deferredPrompt = null;
         });
     } else {
-        // Fallback: guide user to browser menu
         setInstallState('unsupported');
     }
 });
 
-// Already installed (standalone mode)
-if (window.matchMedia('(display-mode: standalone)').matches) {
-    setInstallState('installed');
-}
-
 window.addEventListener('appinstalled', () => {
     setInstallState('installed');
     deferredPrompt = null;
+    console.log('✅ App installed successfully');
 });
 
 // ── Connectivity UI ───────────────────────────────────────────────────

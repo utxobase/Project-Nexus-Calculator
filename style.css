@@ -20,19 +20,18 @@ body {
     background: var(--panel-bg);
     padding: 2rem;
     border: 1px solid var(--neon-green);
-    box-shadow: 0 0 15px rgba(255, 112, 23, 0.1);
+    box-shadow: 0 0 15px rgba(255, 85, 0, 0.1);
     width: 90%;
     max-width: 380px;
 }
 
-/* Header: icon left, text right */
 .header {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 20px;
-    border-bottom: 1px solid #ff6200b8;
-    padding-bottom: 10px;
+    border-bottom: 1px solid #ff620099;
+    padding-bottom: 12px;
 }
 
 .btc-logo {
@@ -74,6 +73,7 @@ input {
     font-size: 1.1rem;
     outline: none;
     box-sizing: border-box;
+    font-family: 'Courier New', monospace;
 }
 
 input:focus {
@@ -99,7 +99,6 @@ input:focus {
     font-weight: bold;
 }
 
-/* Install button: always shown, states handled via JS */
 .btn-install {
     width: 100%;
     background: transparent;
@@ -108,7 +107,7 @@ input:focus {
     padding: 12px;
     margin-top: 20px;
     cursor: pointer;
-    font-family: inherit;
+    font-family: 'Courier New', monospace;
     font-size: 0.85rem;
     letter-spacing: 1px;
     transition: background 0.2s, color 0.2s;
