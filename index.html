@@ -3,19 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS // TERMINAL</title>
+    <title>₿ NEXUS // TERMINAL</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#00ff41">
+    <meta name="theme-color" content="#ff5500">
+
+    <!-- Inline SVG favicon (Bitcoin symbol) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23050505'/><text y='.9em' font-size='85' x='5'>₿</text></svg>">
+
+    <!-- Apple touch icon fallback (use generated PNG if available) -->
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NEXUS">
 </head>
 <body>
 
 <div class="container">
     <div class="header">
-        <h2>SYSTEM:POSITION_CALC</h2>
-        <div class="status-bar">STATUS: <span id="online-status">ONLINE</span></div>
+        <!-- Bitcoin SVG logo -->
+        <div class="btc-logo" aria-label="Bitcoin">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                <rect width="64" height="64" rx="12" fill="#ff5500" opacity="0.12"/>
+                <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle"
+                      font-size="42" fill="#ff5500" font-family="Courier New, monospace"
+                      font-weight="bold">₿</text>
+            </svg>
+        </div>
+        <div class="header-text">
+            <h2>SYSTEM:POSITION_CALC</h2>
+            <div class="status-bar">STATUS: <span id="online-status">ONLINE</span></div>
+        </div>
     </div>
-    
+
     <div class="input-group">
         <label>RISK_AMOUNT (USD)</label>
         <input type="number" id="risk" placeholder="0.00" oninput="calculate()">
@@ -42,8 +62,11 @@
         </div>
     </div>
 
-    <button id="installBtn" class="btn-install">INSTALL_TO_SYSTEM</button>
-    <div class="footer-note">ENCRYPTED // OFFLINE_ENABLED</div>
+    <!-- Dedicated install button, always visible -->
+    <button id="installBtn" class="btn-install">⬇ INSTALL_TO_SYSTEM</button>
+    <div id="install-msg" class="install-msg"></div>
+
+    <div class="footer-note">ENCRYPTED // OFFLINE_ENABLED // ₿ NEXUS v1.0</div>
 </div>
 
 <script src="script.js"></script>

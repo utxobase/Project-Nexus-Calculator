@@ -25,21 +25,34 @@ body {
     max-width: 380px;
 }
 
+/* Header: icon left, text right */
 .header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 20px;
     border-bottom: 1px solid #ff6200b8;
+    padding-bottom: 10px;
+}
+
+.btc-logo {
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.header-text {
+    flex: 1;
 }
 
 h2 {
-    font-size: 1.2rem;
-    margin: 0;
+    font-size: 1.1rem;
+    margin: 0 0 4px 0;
     letter-spacing: 2px;
 }
 
 .status-bar {
     font-size: 0.6rem;
     color: var(--text-gray);
-    margin-bottom: 10px;
 }
 
 .input-group {
@@ -86,21 +99,37 @@ input:focus {
     font-weight: bold;
 }
 
+/* Install button: always shown, states handled via JS */
 .btn-install {
     width: 100%;
     background: transparent;
     color: var(--neon-green);
     border: 1px solid var(--neon-green);
-    padding: 10px;
+    padding: 12px;
     margin-top: 20px;
     cursor: pointer;
-    display: none;
     font-family: inherit;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: background 0.2s, color 0.2s;
 }
 
-.btn-install:hover {
+.btn-install:hover:not(:disabled) {
     background: var(--neon-green);
     color: #000;
+}
+
+.btn-install:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.install-msg {
+    font-size: 0.6rem;
+    text-align: center;
+    margin-top: 6px;
+    color: #888;
+    min-height: 14px;
 }
 
 .footer-note {
